@@ -1,0 +1,3 @@
+This is a *partial* C99 port of harfbuzz.
+
+How to build and install? See output from $./make --help

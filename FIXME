@@ -1,0 +1,1 @@
+Lifetime of reference counted objets does not seem to be synchronised properly. Races can occure on heavy loaded CPUs.
