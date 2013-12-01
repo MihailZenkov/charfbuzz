@@ -73,8 +73,8 @@ install_do(){
     eval incdir=${incdir}
     
     ${slib_install} ${slib_file_name} ${destdir}${sysroot}${libdir}/${slib_file_name}
-    ${ln_s} ${destdir}${sysroot}${libdir}/${slib_file_name} ${destdir}${sysroot}${libdir}/${slib_soname}
-    ${ln_s} ${destdir}${sysroot}${libdir}/${slib_file_name} ${destdir}${sysroot}${libdir}/libharfbuzz.so
+    ${ln_s} ${slib_file_name} ${destdir}${sysroot}${libdir}/${slib_soname}
+    ${ln_s} ${slib_file_name} ${destdir}${sysroot}${libdir}/libharfbuzz.so
     ${file_install} harfbuzz.pc  ${destdir}${sysroot}${libdir}/pkgconfig/harfbuzz.pc
     for hdr in ${api_hdrs}
     do
@@ -152,7 +152,7 @@ libdir_default='${prefix}/lib'
 #command lin set defaults
 #slib_cc_default='gcc -Wall -Wextra -Wno-missing-field-initializers -c -fPIC -fpic -Ofast -std=c99'
 slib_cc_default="gcc -Wall -Wextra -Wno-missing-field-initializers -c -fPIC -fpic -g -std=c99"
-slib_ld_default="gcc -shared -Wl,-soname=${LIB_SONAME}"
+slib_ld_default="gcc -shared -Wl,-soname=${slib_soname}"
 slib_install_default='install -D --mode=755'
 file_install_default='install -D --mode=644'
 ln_s_default='ln --symbolic --force'
