@@ -153,9 +153,9 @@ libdir_default='${prefix}/lib'
 #slib_cc_default='gcc -Wall -Wextra -Wno-missing-field-initializers -c -fPIC -fpic -Ofast -std=c99'
 slib_cc_default="gcc -Wall -Wextra -Wno-missing-field-initializers -c -fPIC -fpic -g -std=c99"
 slib_ld_default="gcc -shared -Wl,-soname=${slib_soname}"
-slib_install_default='install -D --mode=755'
-file_install_default='install -D --mode=644'
-ln_s_default='ln --symbolic --force'
+slib_install_default='install -D -m 755'
+file_install_default='install -D -m 644'
+ln_s_default='ln -sf'
 
 set_default ${PATHS_LIST}
 set_default slib_cc slib_ld
